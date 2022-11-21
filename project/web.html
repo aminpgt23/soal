@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="css/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
+    <title>Dox</title>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="/jq.js"></script>
+      </head>
 </head>
 <body>
+  <div class="alert alert-warning alert-dismissible fade show d-none" role="alert" id="alertid">
+    <p id="alerttext">
+  </p>
+    
+    <button type="button" class="close" id="buttonclose"> 
+      <span >&times;</span>
+    </button>
+  </div>
+
     <nav class="navbar navbar-light  justify-content-between mr-5">
         <div>
             <img src="asset/logo.png" alt="">
@@ -44,22 +57,22 @@
   
  <div class="d-flex p-5 my-5">
      <div class="d-flex flex-column  justify-content-around" style="width: 100px; height:auto">
-         <img class="rounded" src="asset/side-1.png" alt="">
-            <img class="rounded" src="asset/side-2.png" alt="">
-         <img class="rounded" src="asset/side-3.png" alt="">
-         <img class="rounded" src="asset/side-1.png" alt="">
-          <img class="rounded" src="asset/side-2.png" alt="">
+         <img class="rounded" style="border:1px solid ;" src="asset/side-1.png" alt="">
+            <img class="rounded" style="border:1px solid;" src="asset/side-2.png" alt="">
+         <img class="rounded" style="border :1px solid" src="asset/side-3.png" alt="">
+         <img class="rounded"style="border:1px solid" src="asset/side-1.png" alt="">
+          <img class="rounded" style="border :1px solid" src="asset/side-2.png" alt="">
      </div>
 
 
          <div >
-            <img class=" p-4" src="asset/chair.png" alt="kursi">
+            <img class=" p-4 rounded" id="kursiid" style="width:500px ;" src="asset/chair.png" alt="kursi">
         </div>
-    
+
         <div    >
             <h1>Chair Thatty</h1>
             <p style="font-size: 15px ;">IDR 12.000.000</p>
-            <button class="button"  style="border-radius: 15px; background-color: pink;" type="submit"> <img  src="asset/cart-icon.png" alt=""> Add To Chart</button><hr>
+            <a href="/form.html"  class="btn text-dark"  style="border-radius: 15px; background-color: pink;" type="submit"> <img  src="asset/cart-icon.png" alt=""> Add To Chart</a><hr>
         
         
             <h4>About The Product</h4>
@@ -81,8 +94,8 @@
          </div>
    
        <div class="d-flex justify-content-around p-5 ">
-           <div class="card " style="width: 15rem; border-radius: 15px;">
-               <img class="card-img-top p-4 rounded" src="asset/chair-4.png" alt="Card image cap">
+           <div class="card " style="width: 15rem; background-color: antiquewhite; border-radius: 15px;">
+               <img class="card-img-top p-4 rounded" id="mautieid" src="asset/chair-4.png" alt="Card image cap">
              <div class="card-body">
                <h5 class="card-title">Cangkir Mauttie</h5>
                <p class="card-text"> IDR 89.300.000</p>
@@ -90,24 +103,24 @@
          </div>
        
 
-   <div class="card" style="width: 15rem; border-radius: 15px;">
-        <img class="card-img-top p-4" src="asset/chair-3.png" alt="Card image cap">
-         <div class="card-body">
-             <h5 class="card-title">Samman Kakka</h5>
-            <p class="card-text"> IDR 14.500.000</p>
-          </div>
-        </div>
+        <div class="card" style="width: 15rem; background-color: antiquewhite; border-radius: 15px;">
+              <img class="card-img-top p-4" id="samanid" src="asset/chair-3.png" alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">Samman Kakka</h5>
+                  <p class="card-text"> IDR 14.500.000</p>
+                </div>
+              </div>
 
-   <div class="card" style="width: 15rem; border-radius: 15px;">
-         <img class="card-img-top p-4 rounded" src="asset/chair-2.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Lino Dino</h5>
-              <p class="card-text"> IDR 22.000.000</p>
-            </div>
-        </div>
+        <div class="card" style="width: 15rem;background-color: antiquewhite; border-radius: 15px;">
+              <img class="card-img-top p-4 rounded" id="linoid" src="asset/chair-2.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Lino Dino</h5>
+                    <p class="card-text"> IDR 22.000.000</p>
+                  </div>
+              </div>
 
-           <div class="card" style="width: 15rem; border-radius: 15px;">
-              <img class="card-img-top p-4 rounded" src="asset/chair-1.png" alt="Card image cap">
+           <div class="card" style="width: 15rem;background-color: antiquewhite; border-radius: 15px;">
+              <img class="card-img-top p-4 rounded" id="syailid" src="asset/chair-1.png" alt="Card image cap">
                  <div class="card-body">
                    <h5 class="card-title">Syail Ammeno</h5>
                    <p class="card-text"> IDR 12.000.000</p>
@@ -143,8 +156,8 @@
             </div>
             <div >
                 <p><b>Special Letter</b></p>
-                <input class="form-control mr-sm-2" type="search" placeholder="Your Email Addres" aria-label="Search">
-                <button style="background-color: pink; border: 0px;" class="rounded my-2 my-sm-0" type="submit"><img src="asset/tele-icon.png" alt=""></button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Your Email Addres" aria-label="Search" id="inputemail">
+                <button style="background-color: pink; border: 0px;" class="rounded my-2 my-sm-0" type="submit" id="clik"><img src="asset/tele-icon.png" alt=""></button>
             </div>
                
         </div>  
